@@ -42,6 +42,7 @@ class IdeaController extends Controller
     public function Update($id, Request $request)
     {
         Idea::find($id)->update(['statuses' => 'Public']);
+
         return redirect('/ideas');
     }
 
