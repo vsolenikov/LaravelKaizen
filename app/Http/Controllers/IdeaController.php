@@ -39,12 +39,15 @@ class IdeaController extends Controller
      * @return Response
      */
 
-    public function Update($id, Request $request)
+    public function Update($id, Request $request, Idea $statuses)
     {
-        Idea::find($id)->update(['statuses' => 'Public']);
+        //dd($statuses);
+        Idea::find($id)->update(['statuses' => $request->statuses]);
 
         return redirect('/ideas');
     }
+
+
 
     /**
      * Get all of the tasks for a given user.
@@ -52,9 +55,9 @@ class IdeaController extends Controller
      * @return Collection
      */
 
-    public function index2(Idea $user_id)
+    public function index2()
     {
-        $ideas = Idea::where('statuses', '=', 'Public')->orderBy('created_at', 'desc')->get();
+        $ideas = Idea::where('statuses', '=', 'Одобрена')->orderBy('created_at', 'desc')->get();
         return view('welcome', [
             'ideas' => $ideas
         ]);
@@ -111,8 +114,9 @@ class IdeaController extends Controller
      */
 
 
-    public function store(Request $request)
+    public function store(Request $request, Idea $user_id)
     {
+//dd($user_id);
         $this->validate($request, [
 
             'name' => 'required|max:255',
@@ -121,7 +125,7 @@ class IdeaController extends Controller
             'idea' => 'required|max:1000',
         ]);
         Idea::create([
-
+            'user_id' == $user_id,
             'name' => $request->name,
             'mail' => $request->mail,
             'phone' => $request->phone,

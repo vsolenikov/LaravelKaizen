@@ -9,11 +9,6 @@
 
     <!-- Fonts -->
 
-    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
-    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css">
-    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css">
 
     <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
     <link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
@@ -28,13 +23,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
+     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
 
     <style>
         body {
-            font-family: 'Lato';
+            font-family: 'Roboto';
         }
         .fa-btn {
             margin-right: 6px;
@@ -45,7 +45,7 @@
             color: #333;
             padding: 10px;
             text-align: center;
-            width: 60%;
+            width: 70%;
             height:2%;
 
             text-indent: 0px;
@@ -85,7 +85,10 @@
             text-align: center;
 
         }
-
+        .md-form .prefix {
+            top: 1.25rem !important;
+            font-size: 1.75rem;
+        }
         .kz{
             background: url(img/kaizen1.jpg) no-repeat center center fixed !important;
             background-size: cover;
@@ -169,7 +172,7 @@
             margin-bottom: 5px;
 
             padding: 10px;
-            text-align: center;
+            /*text-align: center;*/
             -moz-transition: all 1s ease-out;
             -o-transition: all 1s ease-out;
             -webkit-transition: all 1s ease-out;
@@ -234,11 +237,48 @@ table{
         table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3;}
         table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef;}
         table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
+
+        .select-css {
+            display: block;
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: 700;
+            color: #444;
+            line-height: 1.3;
+            padding: .6em 1.4em .5em .8em; width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            border-radius: .5em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+            background-repeat: no-repeat, repeat;
+            background-position: right .7em top 50%, 0 0;
+            background-size: .65em auto, 100%;
+        }
+        .select-css::-ms-expand { display: none; }
+        .select-css:hover { border-color: #888; }
+        .select-css:focus { border-color: #aaa;
+            box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+            box-shadow: 0 0 0 3px -moz-mac-focusring;
+            color: #222;
+            outline: none;
+        }
+        .select-css option { font-weight:normal; }
+        *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+            background-position: left .7em top 50%, 0 0;
+            padding: .6em .8em .5em 1.4em;
+        }
     </style>
 </head>
 <body id="app-layout">
 <!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="position:fixed;transition: top 0.3s;">
     <div class="container">
 
         <!-- Brand -->
@@ -284,8 +324,8 @@ table{
                     <li class=""><a href="{{ url('/register') }}" style="color:white;">Register</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:white !important;">
+                            {{ Auth::user()->name }} </span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
@@ -303,7 +343,44 @@ table{
 
 <!-- Full Page Intro -->
 @yield('content')
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
+
+    <hr class="my-4">
+    <!-- Social icons -->
+    <div class="pb-4">
+        <h6>Мы в соцсетях:</h6>
+
+        <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+            <i class="fab fa-facebook-f mr-3"></i>
+        </a>
+
+        <a href="https://twitter.com/MDBootstrap" target="_blank">
+            <i class="fab fa-vk mr-3"></i>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+            <i class="fab fa-youtube mr-3"></i>
+        </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+        &#xA9; 2020 Copyright:
+        <a href="https://admtmr.ru" target="_blank"> Администрация Тутаевского муниципального района </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+<script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/jquery.min.js"></script>
+<script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/popper.min.js"></script>
+<script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/bootstrap.min.js"></script>
+<script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/mdb.min.js"></script>
+<script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.1/compiled-addons.min.js"></script>
+<script>new WOW().init()</script>
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

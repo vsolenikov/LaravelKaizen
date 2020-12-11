@@ -40,33 +40,42 @@
                             <!--Card content-->
 
                             <!-- Form -->
-                            <form action="{{ url('idea') }}" method="POST" class="form-horizontal ">
+                            <form action="{{ url('idea') }}" method="POST">
                             {{ csrf_field() }}
 
                             <!-- Task Name -->
                                 <div class="form-group">
                                     <div style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div>
                                     <br><br><br>
-                                    <label for="task" class="col-sm-3 control-label">Ваше ФИО</label>
-
-                                    <div class="col-sm-6">
+                                    <h3 class="dark-grey-text text-center">
+                                        <strong>Отправить идею:</strong>
+                                    </h3>
+                                    <hr>
+                                    <div class="md-form">
+                                        <i class="fas fa-user prefix grey-text"></i>
                                         <input type="text" name="name" id="task-name" class="form-control" value="">
+                                        <label for="task" >ФИО</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Почта</label>
-                                    <div class="col-sm-6">
+                                    <div class="md-form">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
                                         <input type="text" name="mail" id="task-mail" class="form-control" value="">
+                                        <label for="task" >Почта</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Телефон</label>
-                                    <div class="col-sm-6">
+                                    <div class="md-form">
+                                        <i class="fas fa-phone prefix grey-text"></i>
                                         <input type="text" name="phone" id="task-phone" class="form-control" value="">
+                                        <label for="task" >Телефон</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Ваша идея</label>
-                                    <div class="col-sm-6">
-                                        <textarea name="idea" id="task-idea" class="form-control" value=""></textarea>
+                                    <div class="md-form">
+                                        <i class="fas fa-pencil-alt prefix grey-text"></i>
+{{--                                        <textarea name="idea" id="task-idea" class="form-control" value=""></textarea>--}}
+                                        <textarea type="text" id="form8" name="idea" id="task-idea" class="md-textarea form-control"></textarea>
+                                        <label for="task" >Ваша идея</label>
                                     </div>
+
+
+
+
                                 </div>
 
                                 <!-- Add Task Button -->
@@ -101,19 +110,21 @@
     <main>
         <div class="container">
 
-            <h2 class="mt-4 text-center">ТОП-3 Идеи Тутаева</h2>
+            <h2 class="mt-4 text-center">Список идей</h2>
             <!--Section: IDEA-->
             <div class="row mt-4">
+                @foreach ($ideas as $idea)
                 <div class="col-md-4">
                     <!-- Card Wider -->
                     <div class="card card-cascade wider">
 
                         <!-- Card image -->
+
+
                         <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
-                                 alt="Card image cap">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
                             <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
+{{--                                <div class="mask rgba-white-slight"></div>--}}
                             </a>
                         </div>
 
@@ -121,13 +132,11 @@
                         <div class="card-body card-body-cascade text-center pb-0">
 
                             <!-- Title -->
-                            <h4 class="card-title"><strong>Чапай</strong></h4>
+                            <h4 class="card-title"><strong>{{ $idea->name }}</strong></h4>
                             <!-- Subtitle -->
-                            <h5 class="blue-text pb-2"><strong>Кайдзен идея</strong></h5>
+                            <h5 class="blue-text pb-2"><strong>{{ $idea->idea }}</strong></h5>
                             <!-- Text -->
-                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium
-                                doloremque
-                                laudantium, totam rem aperiam. </p>
+                            <p class="card-text">{{ $idea->phone }}<br>{{ $idea->mail }}</p>
 
                             <!-- Linkedin -->
                             <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
@@ -138,98 +147,16 @@
 
                             <!-- Card footer -->
                             <div class="card-footer text-muted text-center mt-4">
-                                Сегодня
+                                {{ $idea->created_at }}
                             </div>
 
                         </div>
 
                     </div>
                     <!-- Card Wider -->
-                </div>
-                <div class="col-md-4">
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider">
+                </div>@endforeach
 
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
-                                 alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
 
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center pb-0">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>Иванов Иван Иванович</strong></h4>
-                            <!-- Subtitle -->
-                            <h5 class="blue-text pb-2"><strong>Кайдзен идея</strong></h5>
-                            <!-- Text -->
-                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium
-                                doloremque
-                                laudantium, totam rem aperiam. </p>
-
-                            <!-- Linkedin -->
-                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                            <!-- Twitter -->
-                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                            <!-- Dribbble -->
-                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
-                            <!-- Card footer -->
-                            <div class="card-footer text-muted text-center mt-4">
-                                6 месяцев назад
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                </div>
-                <div class="col-md-4">
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
-                                 alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center pb-0">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>Аноним</strong></h4>
-                            <!-- Subtitle -->
-                            <h5 class="blue-text pb-2"><strong>Кайдзен идея</strong></h5>
-                            <!-- Text -->
-                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium
-                                doloremque
-                                laudantium, totam rem aperiam. </p>
-
-                            <!-- Linkedin -->
-                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                            <!-- Twitter -->
-                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                            <!-- Dribbble -->
-                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
-                            <!-- Card footer -->
-                            <div class="card-footer text-muted text-center mt-4">
-                                2 дня назад
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                </div>
             </div>
 
 
@@ -237,60 +164,62 @@
 
 
         </div>
+
+
     </main>
 
 
     </div>
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
-         style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:2%">
+{{--    <div class="mask rgba-black-light d-flex justify-content-center align-items-center"--}}
+{{--         style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:2%">--}}
 
-        <div class="panel-body" style="width:90%">
-            <div class="panel panel-default" style="width:100% !important;  box-shadow: 0 0 35px red !important; background-color:#2e3436;border-radius:20px">
-                <div class="panel-heading" style="border-radius: 19px 19px 0px 0px; background: #2e3436 !important; border-color:#2e3436; color:white;">
-                    <h1>Идеи от пользователей</h1>
-                </div>
-            <table class="table-hover table-striped" style="width:100%; font-size:20px;">
-                <thead class="table-dark" style="background:#2e3436 !important;">
-                <th style="width:17%; padding:15px">Автор</th>
-                <th style="width:20%">Адрес эл. почты</th>
-                <th style="width:12%">Телефон</th>
-                <th style="width:30%">Идея</th>
-                <th style="width:10%">Статус идеи</th>
-                <th style="width:20%">Дата отправки</th>
-                </thead>
-                <tbody>
-                @foreach ($ideas as $idea)
-                    <tr style="border-bottom: 1px solid white">
-                        <td class="table-text">
-                            <div>{{ $idea->name }}</div>
-                        </td>
-                        <td class="table-text">
-                            <div>{{ $idea->mail }}</div>
-                        </td>
-                        <td class="table-text">
-                            <div>{{ $idea->phone }}</div>
-                        </td>
-                        <td class="table-text">
-                            <div><textarea readonly="readonly"
-                                           style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
-                            </div>
-                        </td>
-                        <td class="table-text">
-                            <div>{{ $idea->statuses }}</div>
-                        </td>
-                        <td class="table-text">
-                            <div>{{ $idea->created_at}}</div>
-                        </td>
-                        <!-- Task Delete Button -->
+{{--        <div class="panel-body" style="width:90%">--}}
+{{--            <div class="panel panel-default" style="width:100% !important;  box-shadow: 0 0 35px red !important; background-color:#2e3436;border-radius:20px">--}}
+{{--                <div class="panel-heading" style="border-radius: 19px 19px 0px 0px; background: #2e3436 !important; border-color:#2e3436; color:white;">--}}
+{{--                    <h1>Идеи от пользователей</h1>--}}
+{{--                </div>--}}
+{{--            <table class="table-hover table-striped" style="width:100%; font-size:20px;">--}}
+{{--                <thead class="table-dark" style="background:#2e3436 !important;">--}}
+{{--                <th style="width:17%; padding:15px">Автор</th>--}}
+{{--                <th style="width:20%">Адрес эл. почты</th>--}}
+{{--                <th style="width:12%">Телефон</th>--}}
+{{--                <th style="width:30%">Идея</th>--}}
+{{--                <th style="width:10%">Статус идеи</th>--}}
+{{--                <th style="width:20%">Дата отправки</th>--}}
+{{--                </thead>--}}
+{{--                <tbody>--}}
+{{--                @foreach ($ideas as $idea)--}}
+{{--                    <tr style="border-bottom: 1px solid white">--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div>{{ $idea->name }}</div>--}}
+{{--                        </td>--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div>{{ $idea->mail }}</div>--}}
+{{--                        </td>--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div>{{ $idea->phone }}</div>--}}
+{{--                        </td>--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div><textarea readonly="readonly"--}}
+{{--                                           style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>--}}
+{{--                            </div>--}}
+{{--                        </td>--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div>{{ $idea->statuses }}</div>--}}
+{{--                        </td>--}}
+{{--                        <td class="table-text">--}}
+{{--                            <div>{{ $idea->created_at}}</div>--}}
+{{--                        </td>--}}
+{{--                        <!-- Task Delete Button -->--}}
 
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
-        </div>
-    </div>
-    </div>
+{{--                    </tr>--}}
+{{--                @endforeach--}}
+{{--                </tbody>--}}
+{{--            </table>--}}
+{{--        </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    </div>--}}
 
 
 

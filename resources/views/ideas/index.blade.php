@@ -36,32 +36,42 @@
                             <!--Card content-->
 
                             <!-- Form -->
-                            <form action="{{ url('idea') }}" method="POST" class="form-horizontal ">
+                            <form action="{{ url('idea') }}" method="POST">
                             {{ csrf_field() }}
 
                             <!-- Task Name -->
                                 <div class="form-group">
-                                    <div  style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div><br><br><br>
-                                    <label for="task" class="col-sm-3 control-label">Ваше ФИО</label>
-
-                                    <div class="col-sm-6">
+                                    <div style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div>
+                                    <br><br><br>
+                                    <h3 class="dark-grey-text text-center">
+                                        <strong>Отправить идею:</strong>
+                                    </h3>
+                                    <hr>
+                                    <div class="md-form">
+                                        <i class="fas fa-user prefix grey-text"></i>
                                         <input type="text" name="name" id="task-name" class="form-control" value="">
+                                        <label for="task" >ФИО</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Почта</label>
-                                    <div class="col-sm-6">
+                                    <div class="md-form">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
                                         <input type="text" name="mail" id="task-mail" class="form-control" value="">
+                                        <label for="task" >Почта</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Телефон</label>
-                                    <div class="col-sm-6">
+                                    <div class="md-form">
+                                        <i class="fas fa-phone prefix grey-text"></i>
                                         <input type="text" name="phone" id="task-phone" class="form-control" value="">
+                                        <label for="task" >Телефон</label>
                                     </div>
-                                    <br><br>
-                                    <label for="task" class="col-sm-3 control-label">Ваша идея</label>
-                                    <div class="col-sm-6">
-                                        <textarea name="idea" id="task-idea" class="form-control" value=""></textarea>
+                                    <div class="md-form">
+                                        <i class="fas fa-pencil-alt prefix grey-text"></i>
+                                        {{--                                        <textarea name="idea" id="task-idea" class="form-control" value=""></textarea>--}}
+                                        <textarea type="text" id="form8" name="idea" id="task-idea" class="md-textarea form-control"></textarea>
+                                        <label for="task" >Ваша идея</label>
                                     </div>
+
+
+
+
                                 </div>
 
                                 <!-- Add Task Button -->
@@ -123,8 +133,7 @@
                                     <div>{{ $idea->phone }}</div>
                                 </td>
                                 <td class="table-text">
-                                    <div><textarea readonly="readonly"
-                                                   style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
+                                    <div><textarea readonly="readonly" style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
                                     </div>
                                 </td>
                                 <td class="table-text">
@@ -139,26 +148,30 @@
                                         <form action="{{ url('idea/'.$idea->id.'/update_status') }}" method="POST">
                                             {{csrf_field()}}
                                             {{method_field('POST')}}
-
-                                            <button type="submit" id="update-idea-{{ $idea->id }}"
-                                                    class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
-                                                <i></i>Опубликовать
+                                            <select name="statuses" id="update-statuses" class="select-css">
+                                                <option name="this-status">{{ $idea->statuses }}</option>
+                                                <option name="good">Одобрена</option>
+                                                <option name="bad">Отклонена</option>
+                                                <option name="comleted">Выполняется</option>
+                                            </select>
+                                            <button type="submit" id="update-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
+                                                <i></i>Изменить
                                             </button>
                                         </form>
                                     </td>
 
-                                    <td>
+{{--                                    <td>--}}
 
-                                        <form action="{{ url('idea/'.$idea->id) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button type="submit" id="delete-idea-{{ $idea->id }}"
-                                                    class="btn btn-danger" style="margin-left: 10% !important;">
-                                                <i class="fa fa-btn fa-trash"></i>Отклонить
-                                            </button>
+{{--                                        <form action="{{ url('idea/'.$idea->id) }}" method="POST">--}}
+{{--                                            {{ csrf_field() }}--}}
+{{--                                            {{ method_field('DELETE') }}--}}
+{{--                                            <button type="submit" id="delete-idea-{{ $idea->id }}"--}}
+{{--                                                    class="btn btn-danger" style="margin-left: 10% !important;">--}}
+{{--                                                <i class="fa fa-btn fa-trash"></i>Отклонить--}}
+{{--                                            </button>--}}
 
-                                        </form>
-                                    </td>
+{{--                                        </form>--}}
+{{--                                    </td>--}}
                                 @endif
                             </tr>
                         @endforeach

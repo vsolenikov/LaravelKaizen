@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateIdeasTable extends Migration
 {
     /**
-     * Запуск миграций
+     * пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
      *
      * @return void
      */
@@ -14,7 +14,7 @@ class CreateIdeasTable extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index()->nullable();
             $table->string('name');
 	        $table->string('mail');
 	        $table->string('phone');
@@ -24,7 +24,7 @@ class CreateIdeasTable extends Migration
     }
 
     /**
-     * Откатить миграции
+     * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
      *
      * @return void
      *
