@@ -146,10 +146,11 @@
                             <div class="card-footer text-muted text-center mt-4">
                                 {{ $idea->created_at }}
                             </div>
-                            <form action="{{ url('detail/'.$idea->id) }}" method="POST">
+                            <form action="{{ url('details/'.$idea->id) }}" method="POST">
                                 {{csrf_field()}}
+                                {{method_field('POST')}}
 
-                                <button type="submit" id="update-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
+                                <button type="submit" id="select-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
                                     <i></i>Перейти
                                 </button>
                             </form>
