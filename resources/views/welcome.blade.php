@@ -146,7 +146,7 @@
                             <div class="card-footer text-muted text-center mt-4">
                                 {{ $idea->created_at }}
                             </div>
-                            <form action="{{ url('details/'.$idea->id) }}" method="POST">
+                            <form action="{{ url('idea/'.$idea->id) }}" method="POST">
                                 {{csrf_field()}}
                                 {{method_field('POST')}}
 

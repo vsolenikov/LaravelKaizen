@@ -50,7 +50,7 @@ class IdeaController extends Controller
     public function details(Idea $id)
     {
         $ideas = Idea::where('id', '=', $id)->get();
-dd($id);
+//        dd($id);
         return view('ideas.details', [
             'ideas' => $ideas,
             'id' => $id
