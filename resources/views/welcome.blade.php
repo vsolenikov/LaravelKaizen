@@ -129,7 +129,7 @@
                         <div class="card-body card-body-cascade text-center pb-0">
 
                             <!-- Title -->
-                            <h4 class="card-title"><strong>{{ $idea->name }}</strong></h4>
+                            <h4 class="card-title" ><strong>{{ $idea->name }}</strong></h4>
                             <!-- Subtitle -->
                             <h5 class="blue-text pb-2"><strong>{{ $idea->idea }}</strong></h5>
                             <!-- Text -->
@@ -146,6 +146,13 @@
                             <div class="card-footer text-muted text-center mt-4">
                                 {{ $idea->created_at }}
                             </div>
+                            <form action="{{ url('detail/'.$idea->id) }}" method="POST">
+                                {{csrf_field()}}
+
+                                <button type="submit" id="update-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
+                                    <i></i>Перейти
+                                </button>
+                            </form>
 
                         </div>
 

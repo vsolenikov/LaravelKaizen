@@ -47,7 +47,32 @@ class IdeaController extends Controller
         return redirect('/ideas');
     }
 
+    public function details(Idea $id)
+    {
+        $ideas = Idea::where('id', '=', $id)->get();
+dd($id);
+        return view('ideas.details', [
+            'ideas' => $ideas,
+            'id' => $id
+        ]);
+    }
+    public function detstore(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'mail' => 'required|max:255',
+            'phone' => 'required|max:15',
+            'idea' => 'required|max:1000',
+        ]);
 
+//        $request->user()->ideas()->create([
+//            'name' => $request->name,
+//            'mail' => $request->mail,
+//            'phone' => $request->phone,
+//            'idea' => $request->idea,
+//        ]);
+
+    }
 
     /**
      * Get all of the tasks for a given user.

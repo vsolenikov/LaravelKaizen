@@ -10,50 +10,57 @@
     <!-- Fonts -->
 
 
-    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet" />
+    <link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet"/>
     <script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
-{{--    <script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>--}}
+    <script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.js"></script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
+          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+{{--     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
 
 
     <style>
         body {
             font-family: 'Roboto';
         }
+
         .fa-btn {
             margin-right: 6px;
         }
-        .vertus{
+
+        .vertus {
             margin-bottom: 5px;
             background-color: #ccc;
             color: #333;
             padding: 10px;
             text-align: center;
             width: 70%;
-            height:2%;
+            height: 2%;
 
             text-indent: 0px;
             border: 1px solid #888;
             -moz-transition: all 3s ease-out;
             -o-transition: all 3s ease-out;
             -webkit-transition: all 3s ease-out;
-            cursor: pointer;}
+            cursor: pointer;
+        }
 
         #box4:hover {
             background-color: #97CE68;
@@ -62,34 +69,38 @@
             -moz-transform: scale(2);
             -o-transform: scale(2);
         }
-        .centered-naz{
+
+        .centered-naz {
             position: absolute;
             top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size:100px;
+            font-size: 100px;
             color: white;
-            font-family:"East Sea Dokdo";
+            font-family: "East Sea Dokdo";
         }
-        .centered-text{
+
+        .centered-text {
             position: absolute;
             top: -10%;
             left: 70%;
-            width:40%;
+            width: 40%;
             transform: translate(-50%, 130%);
             background: white;
             border-radius: 10px;
             margin-top: -10%;
             padding: 3%;
-            opacity:1;
+            opacity: 1;
             text-align: center;
 
         }
+
         .md-form .prefix {
             top: 1.25rem !important;
             font-size: 1.75rem;
         }
-        .kz{
+
+        .kz {
             background: url(img/kaizen1.jpg) no-repeat center center fixed !important;
             background-size: cover;
             margin-top: 5%;
@@ -102,17 +113,21 @@
             -ms-transform: scale(1.2);
             transform: scale(1.2);
         }
+
         /*затухание*/
         .fade:hover {
             opacity: 0.9;
         }
+
         .fade {
             opacity: 1.5;
         }
+
         /*внутрення рамка*/
         .border:hover {
             box-shadow: inset 0 0 0 3px #53ea93;
         }
+
         /*3д с тенью*/
         .threed:hover {
             box-shadow: 1px 1px 3px 3px white;
@@ -120,9 +135,11 @@
             -webkit-transform: translateX(-7px);
             transform: translateX(-7px);
         }
-        h1{
-            animation: shadow  2s infinite ease-in-out;
+
+        h1 {
+            animation: shadow 2s infinite ease-in-out;
         }
+
         html,
         body,
         header,
@@ -147,28 +164,35 @@
                 height: 650px;
             }
         }
+
         @media (min-width: 800px) and (max-width: 850px) {
             .navbar:not(.top-nav-collapse) {
-                background: #1C2331!important;
+                background: #1C2331 !important;
             }
         }
+
         /* Navbar animation */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.3); }
+            background-color: rgba(0, 0, 0, 0.3);
+        }
 
         .top-nav-collapse {
-            background-color: #1C2331; }
+            background-color: #1C2331;
+        }
 
         /* Adding color to the Navbar on mobile */
         @media only screen and (max-width: 768px) {
             .navbar {
-                background-color: #1C2331; } }
+                background-color: #1C2331;
+            }
+        }
 
         /* Footer color for sake of consistency with Navbar */
         .page-footer {
-            background-color: #1C2331; }
+            background-color: #1C2331;
+        }
 
-        .formes{
+        .formes {
             margin-bottom: 5px;
 
             padding: 10px;
@@ -176,22 +200,26 @@
             -moz-transition: all 1s ease-out;
             -o-transition: all 1s ease-out;
             -webkit-transition: all 1s ease-out;
-            cursor: pointer;}
+            cursor: pointer;
+        }
 
         .formes:hover {
 
 
             -webkit-transform: scale(1.03);
-            -moz-transform: scale(2);
-            -o-transform: scale(2);
+            -moz-transform: scale(1.03);
+            -o-transform: scale(1.03);
         }
-table{
-    width:100%;
-}
-        table,th,tr,td{
-            font-size:100% !important;
-            color:black;
+
+        table {
+            width: 100%;
         }
+
+        table, th, tr, td {
+            font-size: 100% !important;
+            color: black;
+        }
+
         table {
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 
@@ -199,44 +227,76 @@ table{
             border-spacing: 0;
             text-align: center;
         }
+
         th {
             background: #BCEBDD;
             color: white;
             text-shadow: 0 1px 1px #2D2020;
             padding: 10px 20px;
         }
+
         th, td {
             border-style: solid;
             border-width: 0 1px 1px 0;
             border-color: white;
         }
+
         th:first-child, td:first-child {
             text-align: left;
         }
+
         th:first-child {
             border-top-left-radius: 10px;
         }
+
         th:last-child {
             border-top-right-radius: 10px;
             border-right: none;
         }
+
         td {
             padding: 10px 20px;
             background: #F8E391;
         }
+
         tr:last-child td:first-child {
             border-radius: 0 0 0 10px;
         }
+
         tr:last-child td:last-child {
             border-radius: 0 0 10px 0;
         }
+
         tr td:last-child {
-            border-right: none;}
-        table {width: 100%; border-collapse: separate; border-spacing: 4px;}
-        table thead tr {color: #ffffff; font-weight: bold;}
-        table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3;}
-        table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef;}
-        table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
+            border-right: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+        table thead tr {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        table thead tr td {
+            border-radius: 4px 4px 0 0;
+            background: #2e82c3;
+        }
+
+        table tbody tr td {
+            border: 1px solid #2e82c3;
+            border-radius: 4px;
+            background: #cbdfef;
+        }
+
+        table tbody tr td:hover {
+            background: #a2c3dd;
+            transition-duration: 0.2s;
+        }
 
         .select-css {
             display: block;
@@ -245,31 +305,44 @@ table{
             font-weight: 700;
             color: #444;
             line-height: 1.3;
-            padding: .6em 1.4em .5em .8em; width: 100%;
+            padding: .6em 1.4em .5em .8em;
+            width: 100%;
             max-width: 100%;
             box-sizing: border-box;
             margin: 0;
             border: 1px solid #aaa;
-            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
             border-radius: .5em;
             -moz-appearance: none;
             -webkit-appearance: none;
             appearance: none;
             background-color: #fff;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
             background-repeat: no-repeat, repeat;
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
         }
-        .select-css::-ms-expand { display: none; }
-        .select-css:hover { border-color: #888; }
-        .select-css:focus { border-color: #aaa;
+
+        .select-css::-ms-expand {
+            display: none;
+        }
+
+        .select-css:hover {
+            border-color: #888;
+        }
+
+        .select-css:focus {
+            border-color: #aaa;
             box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
             box-shadow: 0 0 0 3px -moz-mac-focusring;
             color: #222;
             outline: none;
         }
-        .select-css option { font-weight:normal; }
+
+        .select-css option {
+            font-weight: normal;
+        }
+
         *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
             background-position: left .7em top 50%, 0 0;
             padding: .6em .8em .5em 1.4em;
@@ -282,12 +355,14 @@ table{
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ url('/') }}" style="color: white; text-align: center;opacity:1.0; padding-right: 0%">
+        <a class="navbar-brand" href="{{ url('/') }}"
+           style="color: white;opacity:1.0;">
             KaiZen
         </a>
 
         <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -317,19 +392,20 @@ table{
 
 
             <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right" >
+            <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li class=""><a href="{{ url('/login') }}" style="color:white;">Login</a></li>
-                    <li class=""><a href="{{ url('/register') }}" style="color:white;">Register</a></li>
+                    <li class=""><a href="{{ url('/login') }}" style="color:white;">Войти</a></li>
+                    <li class=""><a href="{{ url('/register') }}" style="color:white;">Зарегистрироваться</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:white !important;">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                           style="color:white !important;">
                             {{ Auth::user()->name }} </span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            <li><a href="{{ url('/logout') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>
                 @endif
@@ -382,8 +458,12 @@ table{
 <script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.1/compiled-addons.min.js"></script>
 <script>new WOW().init()</script>
 <!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
+        integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

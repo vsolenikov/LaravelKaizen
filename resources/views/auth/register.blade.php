@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
+         style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:0%;width:100%; height:100%">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -79,4 +81,5 @@
         </div>
     </div>
 </div>
+    </div>
 @endsection

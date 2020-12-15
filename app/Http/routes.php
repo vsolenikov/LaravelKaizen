@@ -21,6 +21,9 @@ Route::auth();
 Route::get('/', 'IdeaController@index2');
 Route::post('/', 'IdeaController@welcome');
 
+Route::get('/details/{id}','IdeaController@details');
+Route::post('/detail/{id}','IdeaController@detstore');
+
 Route::get('/ideas', 'IdeaController@index')->middleware(['auth']);
 Route::post('/idea/', 'IdeaController@store');
 Route::delete('/idea/{idea}', 'IdeaController@destroy');
