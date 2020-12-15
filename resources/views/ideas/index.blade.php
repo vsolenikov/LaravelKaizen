@@ -110,7 +110,7 @@
 
                 <div class="panel-body">
                     {{--                        <table class="table table-striped task-table" style="background-color: black">--}}
-                    <table style="background-color: #2e3436;color:white;border-radius: 19px 19px 0px 0px">
+                    <table style="background-color: #2e3436;color:white;border-radius: 19px 19px 0px 0px" class="table-responsive">
                         <thead style="box-shadow: inset 0 0 10px; width:100%; border-radius: 19px 19px 19px 19px">
                         <th style="width:17%; padding:15px">Автор</th>
                         <th style="width:20%">Адрес эл. почты</th>

@@ -73,15 +73,12 @@
                                         <label for="task" >Ваша идея</label>
                                     </div>
 
-
-
-
                                 </div>
 
                                 <!-- Add Task Button -->
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-6">
-                                        <button type="submit" class="btn btn-default grow vertus">
+                                        <button type="submit" class="btn btn-default grow vertus" style="width:100%">
                                             <i class="fa fa-btn fa-plus"></i>Отправить
                                         </button>
                                     </div>

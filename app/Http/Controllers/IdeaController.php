@@ -57,15 +57,17 @@ class IdeaController extends Controller
 
     public function index2()
     {
+
         $ideas = Idea::where('statuses', '=', 'Одобрена')->orderBy('created_at', 'desc')->get();
+
         return view('welcome', [
             'ideas' => $ideas
+
         ]);
     }
 
     public function index(Idea $user_id)
     {
-
         $user_id = Auth::id();
         //dd($user_id);
         if ($user_id == '1') {
@@ -76,7 +78,8 @@ class IdeaController extends Controller
                 'ideas' => $ideas,
                 'user_id' => $user_id
             ]);
-        } else {
+        }
+        else {
             $ideas = Idea::where('user_id', '=', $user_id)->orderBy('created_at', 'desc')->get();
 
             // $ideas=Idea::all();
@@ -85,6 +88,7 @@ class IdeaController extends Controller
                 'user_id' => $user_id
             ]);
         }
+
 
     }
 
@@ -103,7 +107,7 @@ class IdeaController extends Controller
 //            'phone' => $request->phone,
 //            'idea' => $request->idea,
 //        ]);
-        return redirect('/ideas');
+        return redirect('/');
     }
 
     /**
@@ -114,25 +118,42 @@ class IdeaController extends Controller
      */
 
 
-    public function store(Request $request, Idea $user_id)
+    public function store(Request $request)
     {
-//dd($user_id);
+        $user_id=Auth::id();
+//        dd($user_id);
         $this->validate($request, [
-
+            'user_id' =>'nullable|max:255',
             'name' => 'required|max:255',
             'mail' => 'required|max:255',
             'phone' => 'required|max:15',
             'idea' => 'required|max:1000',
         ]);
-        Idea::create([
-            'user_id' == $user_id,
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'phone' => $request->phone,
-            'idea' => $request->idea,
-        ]);
+if($user_id != null){
+    Idea::create([
 
-        return redirect('/ideas');
+        'user_id' => $user_id,
+        'name' => $request->name,
+        'mail' => $request->mail,
+        'phone' => $request->phone,
+        'idea' => $request->idea,
+    ]);
+
+    return redirect('/ideas');
+}
+else {
+    Idea::create([
+
+        'user_id' => $user_id,
+        'name' => $request->name,
+        'mail' => $request->mail,
+        'phone' => $request->phone,
+        'idea' => $request->idea,
+    ]);
+
+    return redirect('/');
+}
+
     }
 
 

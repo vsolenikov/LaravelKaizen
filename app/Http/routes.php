@@ -19,12 +19,12 @@ Route::auth();
 
 
 Route::get('/', 'IdeaController@index2');
-Route::post('//idea', 'IdeaController@welcome');
+Route::post('/', 'IdeaController@welcome');
 
-Route::get('/ideas', 'IdeaController@index');
+Route::get('/ideas', 'IdeaController@index')->middleware(['auth']);
 Route::post('/idea/', 'IdeaController@store');
 Route::delete('/idea/{idea}', 'IdeaController@destroy');
-Route::post('/idea/{id}/update_status','IdeaController@Update')/*->middleware(['auth'])*/;
+Route::post('/idea/{id}/update_status','IdeaController@Update')->middleware(['auth']);
 
 // �������� ��������������...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
