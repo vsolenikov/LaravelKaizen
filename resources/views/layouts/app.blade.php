@@ -182,8 +182,8 @@
 
 
             -webkit-transform: scale(1.03);
-            -moz-transform: scale(2);
-            -o-transform: scale(2);
+            -moz-transform: scale(1.03);
+            -o-transform: scale(1.03);
         }
 table{
     width:100%;
