@@ -17,12 +17,14 @@ Route::get('/', function () {
 
 Route::auth();
 
+Route::match(['get','post'],'/','IdeaController@show');
+Route::match(['get','post'],'/ideas','IdeaController@show');
 
 Route::get('/', 'IdeaController@index2');
 Route::post('/', 'IdeaController@welcome');
 
-Route::get('/idea/{id}','IdeaController@details');
-Route::post('/details/{id}/detail','IdeaController@detstore');
+Route::get('/idea/{id}/details','IdeaController@details');
+Route::post('/idea/{id}/details','IdeaController@details');
 
 Route::get('/ideas', 'IdeaController@index')->middleware(['auth']);
 Route::post('/idea/', 'IdeaController@store');

@@ -5,7 +5,7 @@
          style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:0%;width:100%; height:100%">
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" style="background: white">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">

@@ -12,7 +12,7 @@ class Idea extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','mail','phone','idea', 'statuses'];
+    protected $fillable = ['user_id','name','mail','phone','idea', 'statuses'];
 
 
 

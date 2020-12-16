@@ -15,6 +15,7 @@ use App\Http\Controllers;
 class IdeaController extends Controller
 {
     protected $ideas;
+    protected $users;
 
     /**
      * �������� ������ ���������� �����������.
@@ -38,6 +39,21 @@ class IdeaController extends Controller
      * @param Request $request
      * @return Response
      */
+    public function show(Request $request)
+    {
+        if($request->isMethod('post'))
+        {
+            $rules=[
+                'name'=>'required|min:3',
+                'mail'=>'required|email',
+                'idea'=>'required|min:10'
+            ];
+            $this->validate($request,$rules);
+//            dump($request-all());
+        }
+        return redirect('/welcome');
+    }
+
 
     public function Update($id, Request $request, Idea $statuses)
     {
@@ -47,8 +63,9 @@ class IdeaController extends Controller
         return redirect('/ideas');
     }
 
-    public function details(Idea $id)
+    public function details($id)
     {
+
         $ideas = Idea::where('id', '=', $id)->get();
 //        dd($id);
         return view('ideas.details', [
@@ -56,23 +73,7 @@ class IdeaController extends Controller
             'id' => $id
         ]);
     }
-    public function detstore(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'mail' => 'required|max:255',
-            'phone' => 'required|max:15',
-            'idea' => 'required|max:1000',
-        ]);
 
-//        $request->user()->ideas()->create([
-//            'name' => $request->name,
-//            'mail' => $request->mail,
-//            'phone' => $request->phone,
-//            'idea' => $request->idea,
-//        ]);
-
-    }
 
     /**
      * Get all of the tasks for a given user.
@@ -82,7 +83,6 @@ class IdeaController extends Controller
 
     public function index2()
     {
-
         $ideas = Idea::where('statuses', '=', 'Одобрена')->orderBy('created_at', 'desc')->get();
 
         return view('welcome', [
@@ -93,24 +93,29 @@ class IdeaController extends Controller
 
     public function index(Idea $user_id)
     {
+
         $user_id = Auth::id();
-        //dd($user_id);
+        $names = User::where('id','=',$user_id);
+
+//        dd($user_id);
         if ($user_id == '1') {
             $ideas = Idea::all();
-
-            // $ideas=Idea::all();
             return view('ideas.index', [
                 'ideas' => $ideas,
-                'user_id' => $user_id
+                'user_id' => $user_id,
+                'name'=>$names,
+
+
             ]);
         }
         else {
             $ideas = Idea::where('user_id', '=', $user_id)->orderBy('created_at', 'desc')->get();
 
-            // $ideas=Idea::all();
             return view('ideas.index', [
                 'ideas' => $ideas,
-                'user_id' => $user_id
+                'user_id' => $user_id,
+                'name'=>$names,
+
             ]);
         }
 
@@ -120,9 +125,9 @@ class IdeaController extends Controller
     public function welcome(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'name' => 'required|min:3|max:255',
             'mail' => 'required|max:255',
-            'phone' => 'required|max:15',
+            'phone' => 'required|regex:/(8)[0-9]{9}/',
             'idea' => 'required|max:1000',
         ]);
 
@@ -149,9 +154,9 @@ class IdeaController extends Controller
 //        dd($user_id);
         $this->validate($request, [
             'user_id' =>'nullable|max:255',
-            'name' => 'required|max:255',
-            'mail' => 'required|max:255',
-            'phone' => 'required|max:15',
+            'name' => 'required|min:3|max:255',
+            'mail' => 'required|email|max:255',
+            'phone' => 'required|regex:/(8)[0-9]{9}/',
             'idea' => 'required|max:1000',
         ]);
 if($user_id != null){

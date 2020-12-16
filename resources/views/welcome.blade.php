@@ -51,6 +51,16 @@
                                         <strong>Отправить идею:</strong>
                                     </h3>
                                     <hr>
+                                    @if(count($errors)>0)
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach($errors->all() as $error)
+                                                    <li>{{ $error }}
+                                                    @endforeach
+                                            </ul>
+                                        </div>
+                                        @endif
+
                                     <div class="md-form">
                                         <i class="fas fa-user prefix grey-text"></i>
                                         <input type="text" name="name" id="task-name" class="form-control" value="">
@@ -118,7 +128,7 @@
                         <!-- Card image -->
 
 
-                        <div class="view view-cascade overlay">
+                        <div class="view view-cascade overlay" style="height:fit-content">
                             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
                             <a href="#!">
 {{--                                <div class="mask rgba-white-slight"></div>--}}
@@ -131,7 +141,7 @@
                             <!-- Title -->
                             <h4 class="card-title" ><strong>{{ $idea->name }}</strong></h4>
                             <!-- Subtitle -->
-                            <h5 class="blue-text pb-2"><strong>{{ $idea->idea }}</strong></h5>
+                            <h5 class="blue-text pb-2" style=" overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><strong>{{ $idea->idea }}</strong></h5>
                             <!-- Text -->
                             <p class="card-text">{{ $idea->phone }}<br>{{ $idea->mail }}</p>
 
@@ -146,9 +156,9 @@
                             <div class="card-footer text-muted text-center mt-4">
                                 {{ $idea->created_at }}
                             </div>
-                            <form action="{{ url('idea/'.$idea->id) }}" method="POST">
+                            <form action="{{ url('idea/'.$idea->id.'/details') }}" method="POST">
                                 {{csrf_field()}}
-                                {{method_field('POST')}}
+{{--                                {{method_field('POST')}}--}}
 
                                 <button type="submit" id="select-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
                                     <i></i>Перейти

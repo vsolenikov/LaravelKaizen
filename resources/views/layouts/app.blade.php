@@ -8,30 +8,38 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
+{{--    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">--}}
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">--}}
+
+{{--    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css"/>--}}
+{{--    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css"/>--}}
+{{--    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>--}}
+{{--    <link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet"/>--}}
+{{--    <script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>--}}
+{{--    <script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>--}}
+{{--    <script type="text/javascript" src="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.js"></script>--}}
 
 
-    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet"/>
-    <script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.js"></script>
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
-          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"--}}
+{{--          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">--}}
+{{--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">--}}
 
     <!-- Styles -->
 {{--     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+{{--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">--}}
+
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css">
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">--}}
 
 
 
@@ -39,6 +47,7 @@
     <style>
         body {
             font-family: 'Roboto';
+            font-size:1rem !important;
         }
 
         .fa-btn {
@@ -165,6 +174,8 @@
             }
         }
 
+
+
         @media (min-width: 800px) and (max-width: 850px) {
             .navbar:not(.top-nav-collapse) {
                 background: #1C2331 !important;
@@ -211,92 +222,116 @@
             -o-transform: scale(1.03);
         }
 
-        table {
-            width: 100%;
-        }
+        /*th {*/
+        /*    font-size: 13px;*/
+        /*    font-weight: normal;*/
+        /*    background: #b9c9fe;*/
+        /*    border-top: 4px solid #aabcfe;*/
+        /*    border-bottom: 1px solid #fff;*/
+        /*    color: #039;*/
+        /*    padding: 8px;*/
+        /*}*/
+        /*td {*/
+        /*    background: #e8edff;*/
+        /*    border-bottom: 1px solid #fff;*/
+        /*    color: #669;*/
+        /*    border-top: 1px solid transparent;*/
+        /*    padding: 8px;*/
+        /*}*/
+        /*tr:hover td {background: #ccddff;}*/
+        /*table {*/
+        /*    width: 100%;*/
+        /*}*/
 
-        table, th, tr, td {
-            font-size: 100% !important;
-            color: black;
-        }
+        /*table, th, tr, td {*/
+        /*    font-size: 100% !important;*/
+        /*    color: black;*/
+        /*}*/
 
-        table {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        /*table {*/
+        /*    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
 
-            border-radius: 10px;
-            border-spacing: 0;
-            text-align: center;
-        }
+        /*    border-radius: 10px;*/
+        /*    border-spacing: 0;*/
+        /*    text-align: center;*/
+        /*}*/
 
-        th {
-            background: #BCEBDD;
-            color: white;
-            text-shadow: 0 1px 1px #2D2020;
-            padding: 10px 20px;
-        }
+        /*th {*/
+        /*    background: #BCEBDD;*/
+        /*    color: white;*/
+        /*    text-shadow: 0 1px 1px #2D2020;*/
+        /*    padding: 10px 20px;*/
+        /*}*/
 
-        th, td {
-            border-style: solid;
-            border-width: 0 1px 1px 0;
-            border-color: white;
-        }
+        /*th, td {*/
+        /*    border-style: solid;*/
+        /*    border-width: 0 1px 1px 0;*/
+        /*    border-color: white;*/
+        /*}*/
 
-        th:first-child, td:first-child {
-            text-align: left;
-        }
+        /*th:first-child, td:first-child {*/
+        /*    text-align: left;*/
+        /*}*/
 
-        th:first-child {
-            border-top-left-radius: 10px;
-        }
+        /*th:first-child {*/
+        /*    border-top-left-radius: 10px;*/
+        /*}*/
 
-        th:last-child {
-            border-top-right-radius: 10px;
-            border-right: none;
-        }
+        /*th:last-child {*/
+        /*    border-top-right-radius: 10px;*/
+        /*    border-right: none;*/
+        /*}*/
 
-        td {
-            padding: 10px 20px;
-            background: #F8E391;
-        }
+        /*td {*/
+        /*    padding: 10px 20px;*/
+        /*    background: #F8E391;*/
+        /*}*/
 
-        tr:last-child td:first-child {
-            border-radius: 0 0 0 10px;
-        }
+        /*tr:last-child td:first-child {*/
+        /*    border-radius: 0 0 0 10px;*/
+        /*}*/
 
-        tr:last-child td:last-child {
-            border-radius: 0 0 10px 0;
-        }
+        /*tr:last-child td:last-child {*/
+        /*    border-radius: 0 0 10px 0;*/
+        /*}*/
 
-        tr td:last-child {
-            border-right: none;
-        }
+        /*tr td:last-child {*/
+        /*    border-right: none;*/
+        /*}*/
 
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 4px;
-        }
+        /*table {*/
+        /*    width: 100%;*/
+        /*    border-collapse: separate;*/
+        /*    border-spacing: 4px;*/
+        /*}*/
 
-        table thead tr {
-            color: #ffffff;
-            font-weight: bold;
-        }
+        /*table thead tr {*/
+        /*    color: #ffffff;*/
+        /*    font-weight: bold;*/
+        /*}*/
 
-        table thead tr td {
-            border-radius: 4px 4px 0 0;
-            background: #2e82c3;
-        }
+        /*table thead tr td {*/
+        /*    border-radius: 4px 4px 0 0;*/
+        /*    background: #2e82c3;*/
+        /*}*/
 
-        table tbody tr td {
-            border: 1px solid #2e82c3;
-            border-radius: 4px;
-            background: #cbdfef;
-        }
+        /*table tbody tr td {*/
+        /*    border: 1px solid #2e82c3;*/
+        /*    border-radius: 4px;*/
+        /*    background: #cbdfef;*/
+        /*}*/
 
-        table tbody tr td:hover {
-            background: #a2c3dd;
-            transition-duration: 0.2s;
-        }
+        /*table tbody tr td:hover {*/
+        /*    background: #a2c3dd;*/
+        /*    transition-duration: 0.2s;*/
+        /*}*/
+        table {width: 100%; border-collapse: collapse;}
+        table thead tr {color: #ffffff; font-weight: bold; background: #00bf80;}
+        table thead tr td {border: 1px solid khaki;}
+        table tbody tr td {border: 1px solid white;}
+        table tbody tr:nth-child(2n) {background: white;}
+        table tbody tr:hover {background: khaki;}
+
 
         .select-css {
             display: block;
@@ -351,18 +386,18 @@
 </head>
 <body id="app-layout">
 <!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="position:fixed;transition: top 0.3s;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="position:fixed;transition: top 0.3s;font-size:1rem">
     <div class="container">
 
         <!-- Brand -->
         <a class="navbar-brand" href="{{ url('/') }}"
-           style="color: white;opacity:1.0;">
+           style="color: white;opacity:1.0;font-size:2rem">
             KaiZen
         </a>
 
         <!-- Collapse -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin:auto">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -378,7 +413,7 @@
             </ul>
 
             <!-- Right -->
-            <ul class="navbar-nav nav-flex-icons grow" style="margin-left:3%;">
+            <ul class="navbar-nav nav-flex-icons grow" style="margin-right:5%;">
                 <li class="nav-item">
                     <a href="https://vk.com" class="nav-link" target="_blank">
                         <i class="fab fa-vk"></i>
@@ -387,7 +422,8 @@
             </ul>
 
         </div>
-        <div class="collapse navbar-collapse" id="app-navbar-collapse" style=" padding-bottom:1%;">
+{{--        <div class="collapse navbar-collapse" id="app-navbar-collapse" style=" padding-bottom:1%;">--}}
+        <div class="" id="app-navbar-collapse" style=" padding-bottom:1%;">
             <!-- Left Side Of Navbar -->
 
 
@@ -395,7 +431,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li class=""><a href="{{ url('/login') }}" style="color:white;">Войти</a></li>
+                    <li class="" style="margin-right: 5%;"><a href="{{ url('/login') }}" style="color:white;">Войти</a></li>
                     <li class=""><a href="{{ url('/register') }}" style="color:white;">Зарегистрироваться</a></li>
                 @else
                     <li class="dropdown">
