@@ -51,6 +51,7 @@ class IdeaController extends Controller
             $this->validate($request,$rules);
 //            dump($request-all());
         }
+
         return redirect('/welcome');
     }
 
@@ -60,7 +61,7 @@ class IdeaController extends Controller
         //dd($statuses);
         Idea::find($id)->update(['statuses' => $request->statuses]);
 
-        return redirect('/ideas');
+        return redirect()->back()->with('message', 'Статус идеи обновлён!');
     }
 
     public function details($id)
@@ -169,7 +170,7 @@ if($user_id != null){
         'idea' => $request->idea,
     ]);
 
-    return redirect('/ideas');
+    return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
 }
 else {
     Idea::create([
@@ -181,8 +182,14 @@ else {
         'idea' => $request->idea,
     ]);
 
-    return redirect('/');
+
+    return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
 }
+
+    }
+
+    public function tindin(Request $request)
+    {
 
     }
 

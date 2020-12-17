@@ -212,6 +212,10 @@
                 margin-top:0% !important;
             }
         }
+        @media (min-width: 768px)
+            .col-md-6 {
+                max-width:100% !important;
+            }
 /*Ipad*/
 /*IPAD pro*/
         @media only screen and (width: 1024px) and (height: 1366px) {
@@ -444,6 +448,47 @@
             background-position: left .7em top 50%, 0 0;
             padding: .6em .8em .5em 1.4em;
         }
+
+            .table-box {
+                max-width: 1024px;
+            }
+            .table-box p {
+                font-size: larger;
+                font-weight: bold;
+            }
+            table {
+                width: 100%;
+                border: 1px solid #ccc;
+                border-collapse: collapse;
+            }
+            thead {
+                border: 1px solid #ccc;
+            }
+            th, td {
+                border-left: 1px solid #ccc;
+                white-space: nowrap;
+                padding: 5px;
+            }
+            td:nth-last-child(-n+2) {
+                text-align: right;
+            }
+            @media screen and (max-width: 640px) {
+                .table-box {
+                    overflow-x: scroll;
+                }
+            }
+            .big-table {
+                overflow: auto;
+                position: relative;
+            }
+            .big-table table {
+                display: inline-block;
+                vertical-align: top;
+                max-width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
     </style>
 </head>
 <body id="app-layout">

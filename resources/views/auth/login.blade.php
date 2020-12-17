@@ -5,11 +5,17 @@
          style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:0%;width:100%; height:100%">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2" style="background: white;">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Авторизация</div>
+                <div class="col-md-6 col-sm-12 col-xl-5 mb-4">
+
+                    <!--Card-->
+                    <div class="card formes" >
+                        <div style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div>
+                        <br><br><br>
+                        <h3 class="dark-grey-text text-center">
+                            <strong>Вход</strong>
+                        </h3>
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}" style="    text-align: -webkit-center;">
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -60,6 +66,7 @@
                                         <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>

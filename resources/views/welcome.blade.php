@@ -58,8 +58,8 @@
                                                     <li>{{ $error }}
                                                     @endforeach
                                             </ul>
-                                        </div>
-                                        @endif
+                                        </div>@endif
+
 
                                     <div class="md-form">
                                         <i class="fas fa-user prefix grey-text"></i>
@@ -88,11 +88,18 @@
                                 <!-- Add Task Button -->
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-6">
+
                                         <button type="submit" class="btn btn-default grow vertus" style="width:100%">
+
                                             <i class="fa fa-btn fa-plus"></i>Отправить
                                         </button>
                                     </div>
                                 </div>
+                                @if(session()->has('message'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
                             </form>
                             <!-- Form -->
 

@@ -90,6 +90,11 @@
                                         </button>
                                     </div>
                                 </div>
+                                @if(session()->has('message'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
                             </form>
                             <!-- Form -->
 
@@ -109,7 +114,7 @@
 
     </div>
     <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center big-table"
          style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:2%">
 
         @if (count($ideas) > 0)
@@ -124,7 +129,7 @@
                         <th style="width:20%">Адрес эл. почты</th>
                         <th style="width:12%">Телефон</th>
                         <th style="width:27%">Идея</th>
-                        <th style="width:15%">Статус идеи</th>
+                        <th style="width:15%" hidden="true">Статус идеи</th>
                         <th style="width:20%">Дата отправки</th>
                         @if($user_id=='1')   <th style="width:20%">Статус заявки</th>@endif
 
@@ -145,7 +150,7 @@
                                     <div><textarea readonly="readonly" style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
                                     </div>
                                 </td>
-                                <td >
+                                <td hidden="true">
                                     <div>{{ $idea->statuses }}</div>
                                 </td>
                                 <td >
