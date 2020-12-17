@@ -10,7 +10,7 @@
              style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;">
 
             <!-- Content -->
-            <div class="container">
+            <div class="container" style="margin-top:auto;">
 
                 <!--Grid row-->
                 <div class="row wow fadeIn">

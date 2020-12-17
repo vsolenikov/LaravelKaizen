@@ -60,7 +60,7 @@
             color: #333;
             padding: 10px;
             text-align: center;
-            width: 70%;
+            width: 100%;
             height: 2%;
 
             text-indent: 0px;
@@ -174,7 +174,11 @@
             }
         }
 
-
+        @media (min-width: 300px) and (max-width: 350px) {
+            .navbar-brand {
+                font-size:1rem !important;
+            }
+        }
 
         @media (min-width: 800px) and (max-width: 850px) {
             .navbar:not(.top-nav-collapse) {
@@ -197,6 +201,64 @@
                 background-color: #1C2331;
             }
         }
+/*Ipad*/
+        @media only screen and (width: 768px) and (height: 1024px) {
+            .full-page-intro {
+                margin-top: -30% !important;
+            }
+        }
+        @media only screen and (width: 1024px) and (height: 768px) and (orientation: landscape){
+            .full-page-intro {
+                margin-top:0% !important;
+            }
+        }
+/*Ipad*/
+/*IPAD pro*/
+        @media only screen and (width: 1024px) and (height: 1366px) {
+            .full-page-intro {
+                margin-top:-55% !important;
+            }
+        }
+        @media only screen and (width: 1366px) and (height: 1024px) {
+            .full-page-intro {
+                margin-top:-15% !important;
+            }
+        }
+        /*Ipad pro*/
+
+        /*"Выйти"*/
+        @media only screen and (min-width: 1360px) and (max-height: 1025px) {
+            .dropdown-menu show {
+                margin-left:-100% !important;
+            }
+        }
+/*"Выйти"*/
+            @media only screen and (min-width: 319px) and (max-height: 570px) {
+                .navbar-right {
+                    font-size:0.8rem;
+                }
+            }
+        @media only screen and (min-width: 810px) and (max-height: 380px) {
+            .fadeIn {
+                margin-top:10%;
+            }
+        }
+/*Pixel 2xl*/
+        @media only screen and (width: 823px) and (height: 411px) {
+            .full-page-intro {
+                margin-top:10% !important;
+            }
+        }
+        /*Pixel 2xl*/
+/*Iphone X*/
+        @media only screen and (width: 812px) and (height: 375px) {
+            .full-page-intro {
+                margin-top:10% !important;
+            }
+        }
+        /*Iphone X*/
+
+
 
         /* Footer color for sake of consistency with Navbar */
         .page-footer {
@@ -423,12 +485,12 @@
 
         </div>
 {{--        <div class="collapse navbar-collapse" id="app-navbar-collapse" style=" padding-bottom:1%;">--}}
-        <div class="" id="app-navbar-collapse" style=" padding-bottom:1%;">
+        <div class="" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
 
 
             <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right mr-auto">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li class="" style="margin-right: 5%;"><a href="{{ url('/login') }}" style="color:white;">Войти</a></li>
@@ -440,7 +502,7 @@
                             {{ Auth::user()->name }} </span>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu" role="menu" style="margin-left:-70%">
                             <li><a href="{{ url('/logout') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>

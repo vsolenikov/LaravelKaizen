@@ -126,7 +126,7 @@
                         <th style="width:27%">Идея</th>
                         <th style="width:15%">Статус идеи</th>
                         <th style="width:20%">Дата отправки</th>
-                        <th style="width:20%">Статус заявки</th>
+                        @if($user_id=='1')   <th style="width:20%">Статус заявки</th>@endif
 
                         </thead>
                         <tbody style="background:white">
