@@ -120,10 +120,10 @@
             <h2 class="mt-4 text-center">Список идей</h2>
             <!--Section: IDEA-->
             <div class="row mt-4">
-                @foreach ($ideas as $idea)
+                @foreach ($ideas as $idea)<a href="{{ url('idea/'.$idea->id.'/details') }}">
                 <div class="col-md-4">
                     <!-- Card Wider -->
-                    <div class="card card-cascade wider">
+                    <div class="card card-cascade wider" >
 
                         <!-- Card image -->
 
@@ -136,7 +136,7 @@
                         </div>
 
                         <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center pb-0">
+                        <div class="card-body card-body-cascade text-center pb-0" >
 
                             <!-- Title -->
                             <h4 class="card-title" ><strong>{{ $idea->name }}</strong></h4>
@@ -156,20 +156,20 @@
                             <div class="card-footer text-muted text-center mt-4">
                                 {{ $idea->created_at }}
                             </div>
-                            <form action="{{ url('idea/'.$idea->id.'/details') }}" method="POST">
-                                {{csrf_field()}}
+{{--                            <form action="{{ url('idea/'.$idea->id.'/details') }}" method="POST">--}}
+{{--                                {{csrf_field()}}--}}
 {{--                                {{method_field('POST')}}--}}
 
-                                <button type="submit" id="select-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">
-                                    <i></i>Перейти
-                                </button>
-                            </form>
+{{--                                <button type="submit" id="select-idea-{{ $idea->id }}" class="btn btn-danger" style="background:green !important; margin:1% 2% 1% 1%">--}}
+{{--                                    <i></i>Перейти--}}
+{{--                                </button>--}}
+{{--                            </form>--}}
 
                         </div>
 
                     </div>
                     <!-- Card Wider -->
-                </div>@endforeach
+                </div></a>@endforeach
 
 
             </div>
