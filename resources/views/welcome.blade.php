@@ -16,7 +16,7 @@
                 <div class="row wow fadeIn">
 
                     <!--Grid column-->
-                    <div class="col-md-6 col-sm-12 mb-4 white-text text-center text-md-left">
+                    <div class="col-md-6 col-sm-12 mb-4 white-text text-center text-md-left" style="margin-top:5%;">
 
                         <h1 class="display-4 font-weight-bold">Идеи развития города</h1>
 

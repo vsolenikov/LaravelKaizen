@@ -202,30 +202,32 @@
             }
         }
 /*Ipad*/
-        @media only screen and (width: 768px) and (height: 1024px) {
-            .full-page-intro {
-                margin-top: -30% !important;
-            }
-        }
-        @media only screen and (width: 1024px) and (height: 768px) and (orientation: landscape){
-            .full-page-intro {
-                margin-top:0% !important;
-            }
-        }
-        @media (min-width: 768px)
-            .col-md-6 {
-                max-width:100% !important;
-            }
-/*Ipad*/
-/*IPAD pro*/
+/*        @media only screen and (width: 768px) and (height: 1024px) {*/
+/*            .full-page-intro {*/
+/*                margin-top: -30% !important;*/
+/*            }*/
+/*        }*/
+/*        @media only screen and (width: 1024px) and (height: 768px) and (orientation: landscape){*/
+/*            .full-page-intro {*/
+/*                margin-top:0% !important;*/
+/*            }*/
+/*        }*/
+/*        @media (min-width: 768px)*/
+/*            .col-md-6 {*/
+/*                max-width:100% !important;*/
+/*            }*/
+/*!*Ipad*!*/
+/*!*IPAD pro*!*/
         @media only screen and (width: 1024px) and (height: 1366px) {
             .full-page-intro {
-                margin-top:-55% !important;
+                /*margin-top:-55% !important;*/
+                height:90%;
             }
         }
+
         @media only screen and (width: 1366px) and (height: 1024px) {
             .full-page-intro {
-                margin-top:-15% !important;
+                /*margin-top:-15% !important;*/
             }
         }
         /*Ipad pro*/
@@ -262,12 +264,18 @@
         }
         /*Iphone X*/
 
-
+        @media only screen and (max-width: 768px){
+            .display-4 {
+                /*margin-top:-55% !important;*/
+                font-size: 2.5rem !important;
+            }
+        }
 
         /* Footer color for sake of consistency with Navbar */
         .page-footer {
             background-color: #1C2331;
         }
+
 
         .formes {
             margin-bottom: 5px;
@@ -460,6 +468,7 @@
                 width: 100%;
                 border: 1px solid #ccc;
                 border-collapse: collapse;
+
             }
             thead {
                 border: 1px solid #ccc;
@@ -485,6 +494,7 @@
                 display: inline-block;
                 vertical-align: top;
                 max-width: 100%;
+                min-width: max-content;
                 overflow-x: auto;
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;

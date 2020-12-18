@@ -129,8 +129,8 @@
                         <th style="width:17%; padding:15px">Автор</th>
                         <th style="width:20%">Адрес эл. почты</th>
                         <th style="width:12%">Телефон</th>
-                        <th style="width:55%">Идея</th>
-                        <th style="width:15%">Статус идеи</th>
+                        <th style="width:55% !important;">Идея</th>
+                        @if($user_id!='1')<th style="width:15%">Статус идеи</th>@endif
                         <th style="width:18%">Дата отправки</th>
                         @if($user_id=='1')   <th style="width:20%">Статус заявки</th>@endif
 
@@ -148,12 +148,12 @@
                                     <div>{{ $idea->phone }}</div>
                                 </td>
                                 <td >
-                                    <div><textarea readonly="readonly" style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
+                                    <div><textarea readonly="readonly" style="width:100% !important; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
                                     </div>
                                 </td>
-                                <td>
+                               @if($user_id!='1') <td>
                                     <div>{{ $idea->statuses }}</div>
-                                </td>
+                                </td>@endif
                                 <td >
                                     <div>{{ $idea->created_at}}</div>
                                 </td>
