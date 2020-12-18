@@ -114,23 +114,24 @@
 
     </div>
     <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center big-table"
-         style="background-image: url(/images/phone.jpg);background-repeat: no-repeat; margin-top:2%">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center" style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;background-attachment: fixed;">
+    <main style="width:-webkit-fill-available">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center big-table">
 
         @if (count($ideas) > 0)
 
 
 
-                <div class="panel-body">
+                <div class="panel-body" style="width:90%">@if ($user_id=='1')<div class="container" ><h2 class="mt-4 text-center" style="color:white !important;">Список идей пользователей</div>@else <h2 class="mt-4 text-center" style="color:white !important;">Список ваших идей</h2>@endif
                     {{--                        <table class="table table-striped task-table" style="background-color: black">--}}
                     <table class="table-responsive">
                         <thead >
                         <th style="width:17%; padding:15px">Автор</th>
                         <th style="width:20%">Адрес эл. почты</th>
                         <th style="width:12%">Телефон</th>
-                        <th style="width:27%">Идея</th>
-                        <th style="width:15%" hidden="true">Статус идеи</th>
-                        <th style="width:20%">Дата отправки</th>
+                        <th style="width:55%">Идея</th>
+                        <th style="width:15%">Статус идеи</th>
+                        <th style="width:18%">Дата отправки</th>
                         @if($user_id=='1')   <th style="width:20%">Статус заявки</th>@endif
 
                         </thead>
@@ -150,7 +151,7 @@
                                     <div><textarea readonly="readonly" style="width:100%; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
                                     </div>
                                 </td>
-                                <td hidden="true">
+                                <td>
                                     <div>{{ $idea->statuses }}</div>
                                 </td>
                                 <td >
@@ -194,8 +195,9 @@
                 </div>
             </div>
         @endif
+    </main>
 
-
+    </div>
 
     </div>
 

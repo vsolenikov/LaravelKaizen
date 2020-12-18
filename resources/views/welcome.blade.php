@@ -3,14 +3,14 @@
 @section('content')
     <!--Main layout-->
     <div class="view full-page-intro"
-         style="background-image: url(&apos;idea.jpg&apos;); background-repeat: no-repeat; background-size: cover; margin-top:-1%;">
+         style="background-image: url(&apos;idea.jpg&apos;); background-repeat: no-repeat; background-size: cover; ">
 
         <!-- Mask & flexbox options-->
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
              style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;">
 
             <!-- Content -->
-            <div class="container" style="margin-top:auto;">
+            <div class="container" style="margin:auto;">
 
                 <!--Grid row-->
                 <div class="row wow fadeIn">
