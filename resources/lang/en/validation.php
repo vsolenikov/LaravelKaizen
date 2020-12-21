@@ -60,7 +60,7 @@ return [
     'not_in'               => 'The selected :attribute is invalid.',
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
-    'regex'                => 'Формат номера телефона: 8-9ХХ-ХХХ-ХХ-ХХ',
+    'regex'                => 'номер телефона должен начинаться с +7',
     'required'             => 'Заполните все поля!',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',

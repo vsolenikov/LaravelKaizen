@@ -128,7 +128,7 @@ class IdeaController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3|max:255',
             'mail' => 'required|max:255',
-            'phone' => 'required|regex:/(8)[0-9]{9}/',
+            'phone' => 'required|regex:/[0-9]{9}/',
             'idea' => 'required|max:1000',
         ]);
 
@@ -157,7 +157,7 @@ class IdeaController extends Controller
             'user_id' =>'nullable|max:255',
             'name' => 'required|min:3|max:255',
             'mail' => 'required|email|max:255',
-            'phone' => 'required|regex:/(8)[0-9]{9}/',
+            'phone' => 'required|regex:/[0-9]{11}/',
             'idea' => 'required|max:1000',
         ]);
 if($user_id != null){

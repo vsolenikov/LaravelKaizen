@@ -51,7 +51,7 @@
                                     <div class="col-md-6 col-md-offset-4">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="remember"> Запомнить меня
+                                                <input type="checkbox" name="remember" style="background: black !important; margin-left: -10%; margin-top: 2%; opacity: 1;"> Запомнить меня
                                             </label>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary">
-                                            <i class="fa fa-btn fa-sign-in"></i> Войти
+                                            <i class="fas fa-user prefix grey-text" style="color:white !important;"></i> Войти
                                         </button>
 
                                         <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
