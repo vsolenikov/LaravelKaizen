@@ -132,13 +132,9 @@
                     <div class="col-md-4">
                         <!-- Card Wider -->
                         <div class="card card-cascade wider" style="margin-bottom: 5%;">
-
                             <!-- Card image -->
-
-
                             <div class="view view-cascade overlay" style="height:fit-content">
-                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg"
-                                     alt="Card image cap">
+                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
                                 <a href="#!">
                                     {{--                                <div class="mask rgba-white-slight"></div>--}}
                                 </a>

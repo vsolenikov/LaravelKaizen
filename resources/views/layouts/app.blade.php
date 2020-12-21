@@ -28,16 +28,36 @@
 {{--     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style1.css') }}" />
+    <link href="/css/style1.css">
+
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style2.css') }}" />
+    <link href="/css/style2.css">
 
     <!-- Styles -->
 {{--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">--}}
 
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style3.css') }}" />
+    <link href="/css/style3.css">
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style4.css') }}" />
+    <link href="/css/style4.css">
+
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style5.css') }}" />
+    <link href="/css/style5.css">
+
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style6.css') }}" />
+    <link href="/css/style6.css">
+
     <link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.19.1.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style7.css') }}" />
+    <link href="/css/style7.css">
+
 
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">--}}
 
@@ -603,18 +623,35 @@
 </footer>
 <!--/.Footer-->
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script1.js') }}" />
+<script src="/js/script1.js"></script>
+
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/popper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script2.js') }}" />
+<script src="/js/script2.js"></script>
+
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script3.js') }}" />
+<script src="/js/script3.js"></script>
+
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.19.1/js/mdb.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script4.js') }}" />
+<script src="/js/script4.js"></script>
+
 <script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.19.1/compiled-addons.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script5.js') }}" />
+<script src="/js/script5.js"></script>
 <script>new WOW().init()</script>
+
 <!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
-        integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script6.js') }}" />
+<script src="/js/script6.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/script7.js') }}" />
+<script src="/js/script7.js"></script>
+
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
