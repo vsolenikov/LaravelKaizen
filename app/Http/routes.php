@@ -17,17 +17,29 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+
+//Валидация
 Route::match(['get','post'],'/','IdeaController@show');
 Route::match(['get','post'],'/ideas','IdeaController@show');
+//Конецвалидации
 
+//Гостевая
 Route::get('/', 'IdeaController@index2');
 Route::post('/', 'IdeaController@welcome');
+//КонецГостевой
 
+//Детальная
 Route::get('/idea/{id}/details','IdeaController@details');
 Route::post('/idea/{id}/details','IdeaController@details');
+//КонецДетальной
 
+//Создание идей
 Route::get('/ideas', 'IdeaController@index')->middleware(['auth']);
 Route::post('/idea/', 'IdeaController@store');
+//КонецСоздания
+
+//Удаление/обновление
 Route::delete('/idea/{idea}', 'IdeaController@destroy');
 Route::post('/idea/{id}/update_status','IdeaController@Update')->middleware(['auth']);
 

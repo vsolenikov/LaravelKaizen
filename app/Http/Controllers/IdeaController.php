@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Mockery\Exception;
 use Resources;
 use App\Idea;
 use App\User;
@@ -27,6 +28,8 @@ class IdeaController extends Controller
     {
         $this->ideas = $ideas;
     }*/
+
+
     /**
      * ����������� ������ ���� ����� ������������.
      *
@@ -151,46 +154,66 @@ class IdeaController extends Controller
 
     public function store(Request $request)
     {
-        $user_id=Auth::id();
+        $user_id = Auth::id();
 //        dd($user_id);
         $this->validate($request, [
-            'user_id' =>'nullable|max:255',
+            'user_id' => 'nullable|max:255',
             'name' => 'required|min:3|max:255',
             'mail' => 'required|email|max:255',
             'phone' => 'required|regex:/[0-9]{11}/',
             'idea' => 'required|max:1000',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-if($user_id != null){
-    Idea::create([
+        if ($user_id != null) {
+            try
+            {
+                $imageName = time() . '.' . $request->image->extension();
 
-        'user_id' => $user_id,
-        'name' => $request->name,
-        'mail' => $request->mail,
-        'phone' => $request->phone,
-        'idea' => $request->idea,
-    ]);
+                $request->image->move(public_path('images'), $imageName);
+                Idea::create([
+                    'user_id' => $user_id,
+                    'name' => $request->name,
+                    'mail' => $request->mail,
+                    'phone' => $request->phone,
+                    'idea' => $request->idea,
+                    'image' => $imageName,
+                ]);
+            }
+            catch (Exception $woimage)
+            {
 
-    return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
-}
-else {
-    Idea::create([
+                Idea::create([
+                    'user_id' => $user_id,
+                    'name' => $request->name,
+                    'mail' => $request->mail,
+                    'phone' => $request->phone,
+                    'idea' => $request->idea,
 
-        'user_id' => $user_id,
-        'name' => $request->name,
-        'mail' => $request->mail,
-        'phone' => $request->phone,
-        'idea' => $request->idea,
-    ]);
+                ]);
+                echo $woimage->getMessage('Pizdec');
+            }
 
+            if($user_id=='1')
+            {
+                return redirect()->back()->with('message', 'Идея добавлена');
+            }
 
-    return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
-}
+            return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
+        }
+        else {
+            $imageName = time() . '.' . $request->image->extension();
 
-    }
-
-    public function tindin(Request $request)
-    {
-
+            $request->image->move(public_path('images'), $imageName);
+            Idea::create([
+                'user_id' => $user_id,
+                'name' => $request->name,
+                'mail' => $request->mail,
+                'phone' => $request->phone,
+                'idea' => $request->idea,
+                'image' => $imageName,
+            ]);
+            return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
+        }
     }
 
 

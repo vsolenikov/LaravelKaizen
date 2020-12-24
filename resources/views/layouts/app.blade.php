@@ -123,7 +123,7 @@
         }
 
         .md-form .prefix {
-            top: 1.25rem !important;
+            top: 1.0rem !important;
             font-size: 1.75rem;
         }
 
@@ -297,7 +297,7 @@
 
         .formes {
             margin-bottom: 5px;
-
+            margin-top: 10%;
             padding: 10px;
             /*text-align: center;*/
             -moz-transition: all 1s ease-out;
@@ -314,109 +314,7 @@
             -o-transform: scale(1.03);
         }
 
-        /*th {*/
-        /*    font-size: 13px;*/
-        /*    font-weight: normal;*/
-        /*    background: #b9c9fe;*/
-        /*    border-top: 4px solid #aabcfe;*/
-        /*    border-bottom: 1px solid #fff;*/
-        /*    color: #039;*/
-        /*    padding: 8px;*/
-        /*}*/
-        /*td {*/
-        /*    background: #e8edff;*/
-        /*    border-bottom: 1px solid #fff;*/
-        /*    color: #669;*/
-        /*    border-top: 1px solid transparent;*/
-        /*    padding: 8px;*/
-        /*}*/
-        /*tr:hover td {background: #ccddff;}*/
-        /*table {*/
-        /*    width: 100%;*/
-        /*}*/
 
-        /*table, th, tr, td {*/
-        /*    font-size: 100% !important;*/
-        /*    color: black;*/
-        /*}*/
-
-        /*table {*/
-        /*    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
-
-        /*    border-radius: 10px;*/
-        /*    border-spacing: 0;*/
-        /*    text-align: center;*/
-        /*}*/
-
-        /*th {*/
-        /*    background: #BCEBDD;*/
-        /*    color: white;*/
-        /*    text-shadow: 0 1px 1px #2D2020;*/
-        /*    padding: 10px 20px;*/
-        /*}*/
-
-        /*th, td {*/
-        /*    border-style: solid;*/
-        /*    border-width: 0 1px 1px 0;*/
-        /*    border-color: white;*/
-        /*}*/
-
-        /*th:first-child, td:first-child {*/
-        /*    text-align: left;*/
-        /*}*/
-
-        /*th:first-child {*/
-        /*    border-top-left-radius: 10px;*/
-        /*}*/
-
-        /*th:last-child {*/
-        /*    border-top-right-radius: 10px;*/
-        /*    border-right: none;*/
-        /*}*/
-
-        /*td {*/
-        /*    padding: 10px 20px;*/
-        /*    background: #F8E391;*/
-        /*}*/
-
-        /*tr:last-child td:first-child {*/
-        /*    border-radius: 0 0 0 10px;*/
-        /*}*/
-
-        /*tr:last-child td:last-child {*/
-        /*    border-radius: 0 0 10px 0;*/
-        /*}*/
-
-        /*tr td:last-child {*/
-        /*    border-right: none;*/
-        /*}*/
-
-        /*table {*/
-        /*    width: 100%;*/
-        /*    border-collapse: separate;*/
-        /*    border-spacing: 4px;*/
-        /*}*/
-
-        /*table thead tr {*/
-        /*    color: #ffffff;*/
-        /*    font-weight: bold;*/
-        /*}*/
-
-        /*table thead tr td {*/
-        /*    border-radius: 4px 4px 0 0;*/
-        /*    background: #2e82c3;*/
-        /*}*/
-
-        /*table tbody tr td {*/
-        /*    border: 1px solid #2e82c3;*/
-        /*    border-radius: 4px;*/
-        /*    background: #cbdfef;*/
-        /*}*/
-
-        /*table tbody tr td:hover {*/
-        /*    background: #a2c3dd;*/
-        /*    transition-duration: 0.2s;*/
-        /*}*/
         table {width: 100%; border-collapse: collapse;}
         table thead tr {color: #ffffff; font-weight: bold; background: #00bf80;}
         table thead tr td {border: 1px solid khaki;}
@@ -512,7 +410,7 @@
                 display: inline-block;
                 vertical-align: top;
                 max-width: 100%;
-                min-width: max-content;
+                /*min-width: max-content;*/
                 overflow-x: auto;
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;
@@ -577,6 +475,7 @@
 
                         <ul class="dropdown-menu" role="menu" style="margin-left:-70%">
                             <li><a href="{{ url('/logout') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
+                            <li><a href="{{ url('/ideas') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Лич. Каб.</a></li>
                         </ul>
                     </li>
                 @endif

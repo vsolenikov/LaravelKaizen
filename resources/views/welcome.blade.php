@@ -7,7 +7,7 @@
 
         <!-- Mask & flexbox options-->
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
-             style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;">
+             style="background-image: url(/images/sistemka/Tutaev.jpg);background-repeat: no-repeat; width:auto;height:auto">
 
             <!-- Content -->
             <div class="container" style="margin:auto;">
@@ -40,12 +40,12 @@
                             <!--Card content-->
 
                             <!-- Form -->
-                            <form action="{{ url('idea') }}" method="POST">
+                            <form action="{{ url('idea') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            <!-- Task Name -->
+                            <!-- idea Name -->
                                 <div class="form-group">
-                                    <div style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div>
+                                    <div style="margin: 1% 60% -10% 40%"><img src="/images/sistemka/kaizen.jpg"></div>
                                     <br><br><br>
                                     <h3 class="dark-grey-text text-center">
                                         <strong>Отправить идею:</strong>
@@ -63,30 +63,48 @@
 
                                     <div class="md-form">
                                         <i class="fas fa-user prefix grey-text"></i>
-                                        <input type="text" name="name" id="task-name" class="form-control" value="">
-                                        <label for="task">ФИО</label>
+                                        <input type="text" name="name" id="idea-name" class="form-control" value="">
+                                        <label for="idea">ФИО</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-envelope prefix grey-text"></i>
-                                        <input type="text" name="mail" id="task-mail" class="form-control"   value="">
-                                        <label for="task">Почта</label>
+                                        <input type="text" name="mail" id="idea-mail" class="form-control"   value="">
+                                        <label for="idea">Почта</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-phone prefix grey-text"></i>
-                                        <input type="text" name="phone" id="task-phone" class="form-control" placeholder="+7 (___) ___-__-__" value="+7">
-                                        <label for="task">Телефон</label>
+                                        <input type="text" name="phone" id="idea-phone" class="form-control" placeholder="+7 (___) ___-__-__" value="+7">
+                                        <label for="idea">Телефон</label>
                                     </div>
                                     <div class="md-form">
                                         <i class="fas fa-pencil-alt prefix grey-text"></i>
-                                        {{--                                        <textarea name="idea" id="task-idea" class="form-control" value=""></textarea>--}}
-                                        <textarea type="text" id="form8" name="idea" id="task-idea"
+                                        <textarea type="text" id="form8" name="idea" id="idea-idea"
                                                   class="md-textarea form-control"></textarea>
-                                        <label for="task">Ваша идея</label>
+                                        <label for="idea">Ваша идея</label>
                                     </div>
 
-                                </div>
 
-                                <!-- Add Task Button -->
+{{--                                    <form action="{{ url('idea')  }}" method="POST" enctype="multipart/form-data">--}}
+{{--                                        {{ csrf_field() }}--}}
+{{--                                    <div class="md-form">--}}
+{{--                                        <i class="fas fa-list prefix grey-text"></i>--}}
+{{--                                        <input type="file" name="photos" id="idea-photos" class="form-control" placeholder="" value="">--}}
+{{--                                        <label for="idea"></label>--}}
+{{--                                    </div>--}}
+{{--                                    </form>--}}
+{{--                                    <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">--}}
+{{--                                        {{ csrf_field() }}--}}
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="file" name="image" id="image" class="form-control" style="border:hidden"><br>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                <!-- Add idea Button -->
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-6">
 
@@ -96,12 +114,14 @@
                                         </button>
                                     </div>
                                 </div>
+{{--                            </form>--}}
                                 @if(session()->has('message'))
                                     <div class="alert alert-success">
                                         {{ session()->get('message') }}
                                     </div>
                                 @endif
                             </form>
+
                             <!-- Form -->
 
                         </div>
@@ -134,9 +154,9 @@
                         <div class="card card-cascade wider" style="margin-bottom: 5%;">
                             <!-- Card image -->
                             <div class="view view-cascade overlay" style="height:fit-content">
-                                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                             <img class="card-img-top" src="{{ '/images/'.$idea->image }}" alt="Card image cap">
+
                                 <a href="#!">
-                                    {{--                                <div class="mask rgba-white-slight"></div>--}}
                                 </a>
                             </div>
 

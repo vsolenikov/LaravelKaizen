@@ -7,7 +7,7 @@
 
         <!-- Mask & flexbox options-->
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center"
-             style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;">
+             style="background-image: url(/images/sistemka/Tutaev.jpg);background-repeat: no-repeat;">
 
             <!-- Content -->
             <div class="container">
@@ -28,7 +28,11 @@
 
 
                                         <div class="view view-cascade overlay" style="height:fit-content">
-                                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                                            @if($idea->image!=null)
+                                            <img class="card-img-top" src="{{ '/images/'.$idea->image }}" alt="Card image cap">
+                                            @else
+                                                <img class="card-img-top" src="/images/sistemka/photo6.jpg" alt="Card image cap">
+                                            @endif
                                             <a href="#!">
                                                 {{--                                <div class="mask rgba-white-slight"></div>--}}
                                             </a>

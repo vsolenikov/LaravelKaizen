@@ -4,7 +4,7 @@
     <div class="view full-page-intro" style="background-image: url(&apos;idea.jpg&apos;); background-repeat: no-repeat; background-size: cover;">
 
         <!-- Mask & flexbox options-->
-        <div class="mask rgba-black-light d-flex justify-content-center align-items-center" style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;">
+        <div class="mask rgba-black-light d-flex justify-content-center align-items-center" style="background-image: url(/images/sistemka/Tutaev.jpg);background-repeat: no-repeat;">
 
             <!-- Content -->
             <div class="container">
@@ -36,12 +36,12 @@
                             <!--Card content-->
 
                             <!-- Form -->
-                            <form action="{{ url('idea') }}" method="POST">
+                            <form action="{{ url('idea') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <!-- Task Name -->
                                 <div class="form-group">
-                                    <div style="margin: 1% 60% -10% 40%"><img src="/images/kaizen.jpg"></div>
+                                    <div style="margin: 1% 60% -10% 40%"><img src="/images/sistemka/kaizen.jpg"></div>
                                     <br><br><br>
                                     <h3 class="dark-grey-text text-center">
                                         <strong>Отправить идею:</strong>
@@ -79,6 +79,12 @@
                                         <textarea type="text" id="form8" name="idea" id="task-idea" class="md-textarea form-control"></textarea>
                                         <label for="task" >Ваша идея</label>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="file" name="image" id="image" class="form-control" style="border:hidden"><br>
+                                        </div>
+
+                                    </div>
 
                                 </div>
 
@@ -95,6 +101,11 @@
 {{--                                        {{ session()->get('message') }}--}}
 {{--                                    </div>--}}
 {{--                                @endif--}}
+                                @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('message') }}
+                                </div>
+                                @endif
                             </form>
                             <!-- Form -->
 
@@ -114,7 +125,7 @@
 
     </div>
     <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center" style="background-image: url(/images/phone.jpg);background-repeat: no-repeat;background-attachment: fixed;">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center" style="background-image: url(/images/sistemka/Tutaev.jpg);background-repeat: no-repeat;background-attachment: fixed;">
     <main style="width:-webkit-fill-available">
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center big-table">
 
@@ -132,6 +143,7 @@
                         <th style="width:55% !important;">Идея</th>
                         @if($user_id!='1')<th style="width:15%">Статус идеи</th>@endif
                         <th style="width:18%">Дата отправки</th>
+                        <th style="width:18%">Изображение</th>
                         @if($user_id=='1')   <th style="width:20%">Статус заявки</th>@endif
 
                         </thead>
@@ -154,8 +166,12 @@
                                @if($user_id!='1') <td>
                                     <div>{{ $idea->statuses }}</div>
                                 </td>@endif
+
                                 <td >
                                     <div>{{ $idea->created_at}}</div>
+                                </td>
+                                <td >
+                                    <img src="{{ '/images/'.$idea->image }}" style="width:100%">
                                 </td>
                                 <!-- Idea Delete-Update Button -->
                                 @if($user_id=='1')

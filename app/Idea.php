@@ -12,7 +12,7 @@ class Idea extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id','name','mail','phone','idea', 'statuses'];
+    protected $fillable = ['user_id','name','mail','phone','idea', 'statuses','image'];
 
 
 
@@ -31,8 +31,5 @@ class Idea extends Model
     {
         return$this->belongsTo(User::class);
     }
-
-
-
 
 }
