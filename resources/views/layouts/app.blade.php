@@ -288,6 +288,12 @@
                 font-size: 2.5rem !important;
             }
         }
+        @media only screen and (min-width: 1366px){
+            textarea {
+                /*margin-top:-55% !important;*/
+                width:100% !important;
+            }
+        }
 
         /* Footer color for sake of consistency with Navbar */
         .page-footer {
@@ -415,6 +421,8 @@
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;
             }
+
+
     </style>
 </head>
 <body id="app-layout">
@@ -473,7 +481,7 @@
                             {{ Auth::user()->name }} </span>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu" style="margin-left:-70%">
+                        <ul class="dropdown-menu" role="menu" >
                             <li><a href="{{ url('/logout') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             <li><a href="{{ url('/ideas') }}" style="font-size:100%"><i class="fa fa-btn fa-sign-out"></i>Лич. Каб.</a></li>
                         </ul>

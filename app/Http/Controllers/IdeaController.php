@@ -44,14 +44,13 @@ class IdeaController extends Controller
      */
     public function show(Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $rules=[
-                'name'=>'required|min:3',
-                'mail'=>'required|email',
-                'idea'=>'required|min:10'
+        if ($request->isMethod('post')) {
+            $rules = [
+                'name' => 'required|min:3',
+                'mail' => 'required|email',
+                'idea' => 'required|min:10'
             ];
-            $this->validate($request,$rules);
+            $this->validate($request, $rules);
 //            dump($request-all());
         }
 
@@ -90,7 +89,7 @@ class IdeaController extends Controller
         $ideas = Idea::where('statuses', '=', 'Одобрена')->orderBy('created_at', 'desc')->get();
 
         return view('welcome', [
-            'ideas' => $ideas
+            'ideas' => $ideas,
 
         ]);
     }
@@ -99,7 +98,7 @@ class IdeaController extends Controller
     {
 
         $user_id = Auth::id();
-        $names = User::where('id','=',$user_id);
+        $names = User::where('id', '=', $user_id);
 
 //        dd($user_id);
         if ($user_id == '1') {
@@ -107,18 +106,18 @@ class IdeaController extends Controller
             return view('ideas.index', [
                 'ideas' => $ideas,
                 'user_id' => $user_id,
-                'name'=>$names,
+                'name' => $names,
 
 
             ]);
-        }
-        else {
+        } else {
             $ideas = Idea::where('user_id', '=', $user_id)->orderBy('created_at', 'desc')->get();
 
             return view('ideas.index', [
                 'ideas' => $ideas,
                 'user_id' => $user_id,
-                'name'=>$names,
+                'name' => $names,
+
 
             ]);
         }
@@ -165,8 +164,47 @@ class IdeaController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         if ($user_id != null) {
-            try
+
+//dd($request->all());
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+
+                $request->image->move(public_path('images'), $imageName);
+
+                Idea::create([
+                    'user_id' => $user_id,
+                    'name' => $request->name,
+                    'mail' => $request->mail,
+                    'phone' => $request->phone,
+                    'idea' => $request->idea,
+                    'image' => $imageName,
+                ]);
+
+
+
+            }
+            else
             {
+                Idea::create([
+                    'user_id' => $user_id,
+                    'name' => $request->name,
+                    'mail' => $request->mail,
+                    'phone' => $request->phone,
+                    'idea' => $request->idea,
+                    'image' => 'peoples.jpg',
+
+                ]);
+            }
+            if ($user_id == '1') {
+                return redirect()->back()->with('message', 'Идея добавлена');
+            } else {
+                return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
+            }
+
+        } else {
+
+//            dd($request->all());
+            if ($request->hasFile('image')) {
                 $imageName = time() . '.' . $request->image->extension();
 
                 $request->image->move(public_path('images'), $imageName);
@@ -176,44 +214,24 @@ class IdeaController extends Controller
                     'mail' => $request->mail,
                     'phone' => $request->phone,
                     'idea' => $request->idea,
-                    'image' => $imageName,
+                    'image' => 'peoples.jpg'
                 ]);
+                return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
             }
-            catch (Exception $woimage)
+            else
             {
-
                 Idea::create([
                     'user_id' => $user_id,
                     'name' => $request->name,
                     'mail' => $request->mail,
                     'phone' => $request->phone,
                     'idea' => $request->idea,
-
+                    'image' => 'peoples.jpg'
                 ]);
-                echo $woimage->getMessage('Pizdec');
+                return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
             }
-
-            if($user_id=='1')
-            {
-                return redirect()->back()->with('message', 'Идея добавлена');
-            }
-
-            return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
         }
-        else {
-            $imageName = time() . '.' . $request->image->extension();
 
-            $request->image->move(public_path('images'), $imageName);
-            Idea::create([
-                'user_id' => $user_id,
-                'name' => $request->name,
-                'mail' => $request->mail,
-                'phone' => $request->phone,
-                'idea' => $request->idea,
-                'image' => $imageName,
-            ]);
-            return redirect()->back()->with('message', 'Ваша идея отправлена модератору. Спасибо)');
-        }
     }
 
 

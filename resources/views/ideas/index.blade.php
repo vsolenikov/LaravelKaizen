@@ -140,7 +140,7 @@
                         <th style="width:17%; padding:15px">Автор</th>
                         <th style="width:20%">Адрес эл. почты</th>
                         <th style="width:12%">Телефон</th>
-                        <th style="width:55% !important;">Идея</th>
+                        <th style="width:55% !important; ">Идея</th>
                         @if($user_id!='1')<th style="width:15%">Статус идеи</th>@endif
                         <th style="width:18%">Дата отправки</th>
                         <th style="width:18%">Изображение</th>
@@ -160,7 +160,7 @@
                                     <div>{{ $idea->phone }}</div>
                                 </td>
                                 <td >
-                                    <div><textarea readonly="readonly" style="width:100% !important; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
+                                    <div><textarea readonly="readonly" style="overflow: scroll; border:0;background-color:transparent;readonly:true !important">{{ $idea->idea }}</textarea>
                                     </div>
                                 </td>
                                @if($user_id!='1') <td>

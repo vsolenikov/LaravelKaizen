@@ -84,16 +84,6 @@
                                     </div>
 
 
-{{--                                    <form action="{{ url('idea')  }}" method="POST" enctype="multipart/form-data">--}}
-{{--                                        {{ csrf_field() }}--}}
-{{--                                    <div class="md-form">--}}
-{{--                                        <i class="fas fa-list prefix grey-text"></i>--}}
-{{--                                        <input type="file" name="photos" id="idea-photos" class="form-control" placeholder="" value="">--}}
-{{--                                        <label for="idea"></label>--}}
-{{--                                    </div>--}}
-{{--                                    </form>--}}
-{{--                                    <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">--}}
-{{--                                        {{ csrf_field() }}--}}
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <input type="file" name="image" id="image" class="form-control" style="border:hidden"><br>

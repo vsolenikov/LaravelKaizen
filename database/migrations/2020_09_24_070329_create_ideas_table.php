@@ -19,7 +19,7 @@ class CreateIdeasTable extends Migration
 	        $table->string('mail');
 	        $table->string('phone');
     	    $table->string('idea');
-    	    $table->string('image')->nullable();
+    	    $table->string('image')->default('photo6.jpg');
             $table->timestamps();
 
         });
